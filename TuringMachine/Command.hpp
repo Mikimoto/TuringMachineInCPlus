@@ -31,7 +31,7 @@ public:
     
     void parser(string codeLine);
     bool isReady();
-    void print();
+    string print();
     void setNext(Command& c);
     void exec(TuringModel& t);
 };

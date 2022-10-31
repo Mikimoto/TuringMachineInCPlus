@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4959AC1E290ECEBE006E7E70 /* Tape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4959AC1D290ECEBE006E7E70 /* Tape.cpp */; };
 		4959AC22290ED525006E7E70 /* Turing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4959AC20290ED525006E7E70 /* Turing.cpp */; };
 		49C6DB26290E92DF0039D168 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49C6DB25290E92DF0039D168 /* main.cpp */; };
 		49EAA824290F730E0067637D /* TuringModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49EAA822290F730E0067637D /* TuringModel.cpp */; };
@@ -29,8 +28,6 @@
 
 /* Begin PBXFileReference section */
 		4959AC1B290EBEF9006E7E70 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
-		4959AC1C290ECDB3006E7E70 /* Tape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tape.h; sourceTree = "<group>"; };
-		4959AC1D290ECEBE006E7E70 /* Tape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tape.cpp; sourceTree = "<group>"; };
 		4959AC1F290ED127006E7E70 /* Share.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Share.h; sourceTree = "<group>"; };
 		4959AC20290ED525006E7E70 /* Turing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Turing.cpp; sourceTree = "<group>"; };
 		4959AC21290ED525006E7E70 /* Turing.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Turing.hpp; sourceTree = "<group>"; };
@@ -76,8 +73,6 @@
 			children = (
 				4959AC1B290EBEF9006E7E70 /* main.h */,
 				49C6DB25290E92DF0039D168 /* main.cpp */,
-				4959AC1C290ECDB3006E7E70 /* Tape.h */,
-				4959AC1D290ECEBE006E7E70 /* Tape.cpp */,
 				4959AC1F290ED127006E7E70 /* Share.h */,
 				4959AC20290ED525006E7E70 /* Turing.cpp */,
 				4959AC21290ED525006E7E70 /* Turing.hpp */,
@@ -153,7 +148,6 @@
 				4959AC22290ED525006E7E70 /* Turing.cpp in Sources */,
 				49C6DB26290E92DF0039D168 /* main.cpp in Sources */,
 				49EAA824290F730E0067637D /* TuringModel.cpp in Sources */,
-				4959AC1E290ECEBE006E7E70 /* Tape.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

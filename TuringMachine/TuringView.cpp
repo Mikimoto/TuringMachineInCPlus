@@ -37,7 +37,7 @@ void TuringView::printUnderLine() {
     cout << endl;
 }
 
-void TuringView::printReadWriteHeader(TuringModel& data) {
+void TuringView::printReadWriteHeader(TuringModel& data, Command& command) {
     cout << LEADSTR;
     for (int l=0;  l<=data.getPoint(); l++) {
         if (l == 0) {
@@ -49,14 +49,14 @@ void TuringView::printReadWriteHeader(TuringModel& data) {
     printf("▲");
     cout << endl << endl;
     
-    cout << "[ 狀態 ]:" << ' ' << "     [ 位置 ]:" << data.getPoint()+1 << "        [*讀取*]:" << ' ' << "         [ 寫入 ]:    無    " << endl;
+    cout << "[ 狀態 ]:" << data.getStatus() << "     [ 位置 ]:" << data.getPoint()+1 <<  "         [ 指令 ]:" << command.print() << endl;
 }
 
-void TuringView::refresh(TuringModel& data) {
+void TuringView::refresh(TuringModel& data, Command& command) {
     system("clear");
     
     printUpperLine();
     printData(data);
     printUnderLine();
-    printReadWriteHeader(data);
+    printReadWriteHeader(data, command);
 }

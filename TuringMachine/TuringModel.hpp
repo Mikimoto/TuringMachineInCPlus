@@ -24,7 +24,9 @@ public:
     ~TuringModel();
     
     char getData(int i);
-    int getPoint();
+    int  getPoint();
+    string getStatus();
+    
     void setupData(string var);
     bool isHandler(string status, char val);
     void moveLeft();

@@ -13,7 +13,8 @@
 
 Turing::Turing() {
     readCode("/Users/mikimoto/Developer/DeepThought/TuringMachine/code.txt");
-    viewer.refresh(model);
+    Command c("q0,0,0,h,q0");
+    viewer.refresh(model, c);
 }
 
 Turing::~Turing() {
@@ -45,7 +46,7 @@ void Turing::readCode(const char* file) {
 void Turing::handle(Command& command) {
     command.exec(model);
     sleep(1);
-    viewer.refresh(model);
+    viewer.refresh(model, command);
 }
 
 void Turing::run() {

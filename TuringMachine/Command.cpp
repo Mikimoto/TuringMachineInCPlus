@@ -48,8 +48,9 @@ bool Command::isReady() {
     return ready;
 }
 
-void Command::print() {
-    cout << "[" << preStatus << " " << preValue << "," << move << " " << setValue << " " << setStatus << "]" << endl;
+string Command::print() {
+    string str = preStatus + " " +  preValue +  ", " + setValue +  " " + move + " " + setStatus;
+    return str;
 }
 
 void Command::setNext(Command& c) {

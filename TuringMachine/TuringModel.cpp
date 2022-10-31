@@ -21,6 +21,10 @@ int TuringModel::getPoint() {
     return point;
 }
 
+string TuringModel::getStatus() {
+    return reg;
+}
+
 void TuringModel::setupData(string var) {
     for (int i=0; i<var.size(); i++) {
         tapeData[i] = var.c_str()[i];

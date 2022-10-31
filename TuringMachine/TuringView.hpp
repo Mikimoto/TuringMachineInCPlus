@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include "Share.h"
 #include "TuringModel.hpp"
+#include "Command.hpp"
 
 using namespace::std;
 
@@ -19,13 +20,13 @@ private:
     void printUpperLine();
     void printData(TuringModel& data);
     void printUnderLine();
-    void printReadWriteHeader(TuringModel& data);
+    void printReadWriteHeader(TuringModel& data, Command& command);
     
 public:
     TuringView();
     ~TuringView();
     
-    void refresh(TuringModel& model);
+    void refresh(TuringModel& model, Command& command);
 };
 
 #endif /* TuringView_hpp */
