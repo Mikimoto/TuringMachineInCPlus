@@ -9,103 +9,6 @@
 
 using namespace::std;
 
-static string LEADSTR = "        ";
-
-class Tape {
-private:
-    char tapeData[TAPELENGTH];  // 紙帶內容
-    
-public:
-    Tape() {
-        for( int i=0; i<TAPELENGTH; i++) {
-            tapeData[i] = '0';
-        }
-    }
-    
-    ~Tape() {}
-    
-    char getData(int i) {
-        return tapeData[i];
-    }
-};
-
-class TapeView {
-private:
-    void printUpperLine() {
-        cout << LEADSTR; // 前面有八個空格
-        for (int i=0; i<TAPELENGTH; i++ ) {
-            printf("＿＿");
-        }
-        cout << endl;
-    }
-    
-    void printData(Tape& data) {
-        cout << LEADSTR << "|";
-        for (int j=0; j<TAPELENGTH; j++ ) {
-            printf(" %c |",data.getData(j));
-        }
-        cout << endl;
-    }
-    
-    void printUnderLine() {
-        cout << LEADSTR;
-        for (int k=0; k<TAPELENGTH; k++ ) {
-            printf("￣￣");
-        }
-        cout << endl;
-    }
-    
-public:
-    TapeView() {}
-    
-    ~TapeView() {}
-    
-    void draw(Tape &data) {
-        printUpperLine();
-        printData(data);
-        printUnderLine();
-    }
-};
-
-class TapeController {
-private:
-    
-public:
-    TapeController() {}
-    ~TapeController() {}
-};
-
-class RWHeader {
-private:
-    int controlPoint = 0;
-    
-public:
-    RWHeader() {}
-    ~RWHeader() {}
-    
-    void read() {}
-    void write() {}
-
-    void next() {
-        controlPoint++;
-    }
-    
-    void output() {
-        cout << LEADSTR;
-        for (int l=0;  l<=controlPoint; l++) {
-            if (l == 0) {
-                printf("  ");   // 2個字元
-            } else {
-                printf("    "); // 4個字元
-            }
-        }
-        printf("▲");
-        cout << endl << endl;
-        
-        cout << "[ 狀態 ]:" << ' ' << "     [ 位置 ]:" << controlPoint+1 << "        [*讀取*]:" << ' ' << "         [ 寫入 ]:    無    " << endl;
-    }
-};
-
 class Register {
     Register() {}
     ~Register() {}
@@ -120,33 +23,8 @@ private:
     string inputAnotherVar;
     string status;
     vector<string> codes;
-    Tape *displayTape = new Tape();
-    RWHeader *header = new RWHeader();
+    TapeController tape;
 
-    void readCode(const char* file) {
-        system("pwd");
-        std::ifstream infile(file);
-        if (infile.is_open()) {
-            std::string line;
-            int rLine = 0;
-            while (std::getline(infile, line)) {
-                if (rLine == 0) {
-                    inputVar = line;
-                } else if (rLine == 1) {
-                    inputAnotherVar = line;
-                } else {
-                    codes.push_back(line);
-                }
-                rLine++;
-            }
-            infile.close();
-        }
-        
-//        for (int i=0; i<codes.size(); i++) {
-//            cout << codes[i] << endl;
-//        }
-    }
-    
     void split(string& s, string& delim, vector<string>* ret) {
         size_t last = 0;
         size_t index=s.find_first_of(delim, last);
@@ -164,12 +42,9 @@ private:
         
 public:
     Controller() {
-        readCode("/Users/mikimoto/Developer/DeepThought/TuringMachine/code.txt");
     }
     
     ~Controller() {
-        delete displayTape;
-        delete header;
     }
     
     void run() {
@@ -192,17 +67,6 @@ public:
 //            cout << program[i] << endl;
 //        }
     }
-    
-    void next() {
-        header->next();
-        output();
-    }
-    
-    void output() {
-        system("clear");
-//        displayTape->output();
-        header->output();
-    }
 };
 
 
@@ -219,43 +83,6 @@ char gcMatchCodes[CONTROLSTEPS]= "";              /*    匹配代码    */
 char gcControlState ;      /*    控制器状态    */
 char gcControlStrip ;    /*    控制器符号    */
 int  giControlPoint = 0;    /*    控制器位置    */
-
-
-
-void InitDateStrip(void)
-{
-    if ( gets(gcDateStrip) == NULL )
-        {
-            printf("错误：无法初始化数据符号");
-            exit(0);
-        }
-    for (int i=strlen(gcDateStrip); i<DATESTRIPS+1; i++)
-        {
-        gcDateStrip[i] = 'b';
-        }
-}
-
-void InitControlState(void)
-{
-    
-    if ( scanf("%c",&gcControlState) == EOF )
-        {
-        printf("错误：无法初始化控制器状态");
-        exit(0);
-        }
-}
-
-void InitControlPos(void)
-{
-    
-    if ( scanf("%d",&giControlPoint) == EOF )
-        {
-        printf("错误：无法初始化控制器位置");
-        exit(0);
-        }
-    
-    giControlPoint -= 1;
-}
 
 void ReadWorkCodes(void)
 {
@@ -317,51 +144,22 @@ void SetControlState(void)
     gcControlState = gcMatchCodes[4];
 }
 
-void RefreshStrip()
-{
-        //system("cls");     /* Windows */
-    system("clear");    /* Linux */
-    printf("    ");
-    for (int i=0; i<DATESTRIPS; i++ )
-        {
-        printf("＿＿");
-        }
-    
-    printf("\n       |");
-    for (int j=1; j<=DATESTRIPS; j++ )
-        {
-        printf(" %c |",gcDateStrip[j]);
-        }
-    
-    printf("\n    ");
-    for (int k=0; k<DATESTRIPS; k++ )
-        {
-        printf("￣￣");
-        }
-    printf("\n");
-    for (int l=0;  l<=giControlPoint+1; l++)
-        printf("￣￣");
-    printf(" ▲ ");
-    for (int l=0;  l<=giControlPoint+1; l++)
-        printf("￣￣");
-    printf("\n\n");
-}
-
 int main(int argc, const char * argv[]) {
     cout << "圖靈機模擬器" << endl << endl;
 
-    Controller *simulator = new Controller();
-    simulator->output();
-    sleep(SLEEPTIME);
+    Turing simulator;
+    simulator.run();
+//    simulator->output();
+//    sleep(SLEEPTIME);
 
 //    for (int i=1; i<TAPELENGTH; i++) {
 //        simulator->next();
 //        sleep(SLEEPTIME);
 //    }
     
-    simulator->run();
+//    simulator->run();
     
-    delete simulator;
+//    delete simulator;
 //    char c = 'y';
 //    printf("开始工作\n");
 //

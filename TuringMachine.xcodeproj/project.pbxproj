@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4959AC1E290ECEBE006E7E70 /* Tape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4959AC1D290ECEBE006E7E70 /* Tape.cpp */; };
+		4959AC22290ED525006E7E70 /* Turing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4959AC20290ED525006E7E70 /* Turing.cpp */; };
 		49C6DB26290E92DF0039D168 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49C6DB25290E92DF0039D168 /* main.cpp */; };
+		49EAA824290F730E0067637D /* TuringModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49EAA822290F730E0067637D /* TuringModel.cpp */; };
+		49EAA827290F73B10067637D /* TuringView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49EAA825290F73B10067637D /* TuringView.cpp */; };
+		49EAA82A290F75FB0067637D /* Command.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49EAA828290F75FB0067637D /* Command.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,8 +29,19 @@
 
 /* Begin PBXFileReference section */
 		4959AC1B290EBEF9006E7E70 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
+		4959AC1C290ECDB3006E7E70 /* Tape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tape.h; sourceTree = "<group>"; };
+		4959AC1D290ECEBE006E7E70 /* Tape.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tape.cpp; sourceTree = "<group>"; };
+		4959AC1F290ED127006E7E70 /* Share.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Share.h; sourceTree = "<group>"; };
+		4959AC20290ED525006E7E70 /* Turing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Turing.cpp; sourceTree = "<group>"; };
+		4959AC21290ED525006E7E70 /* Turing.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Turing.hpp; sourceTree = "<group>"; };
 		49C6DB22290E92DF0039D168 /* TuringMachine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TuringMachine; sourceTree = BUILT_PRODUCTS_DIR; };
 		49C6DB25290E92DF0039D168 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		49EAA822290F730E0067637D /* TuringModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TuringModel.cpp; sourceTree = "<group>"; };
+		49EAA823290F730E0067637D /* TuringModel.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TuringModel.hpp; sourceTree = "<group>"; };
+		49EAA825290F73B10067637D /* TuringView.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TuringView.cpp; sourceTree = "<group>"; };
+		49EAA826290F73B10067637D /* TuringView.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TuringView.hpp; sourceTree = "<group>"; };
+		49EAA828290F75FB0067637D /* Command.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Command.cpp; sourceTree = "<group>"; };
+		49EAA829290F75FB0067637D /* Command.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Command.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +76,17 @@
 			children = (
 				4959AC1B290EBEF9006E7E70 /* main.h */,
 				49C6DB25290E92DF0039D168 /* main.cpp */,
+				4959AC1C290ECDB3006E7E70 /* Tape.h */,
+				4959AC1D290ECEBE006E7E70 /* Tape.cpp */,
+				4959AC1F290ED127006E7E70 /* Share.h */,
+				4959AC20290ED525006E7E70 /* Turing.cpp */,
+				4959AC21290ED525006E7E70 /* Turing.hpp */,
+				49EAA822290F730E0067637D /* TuringModel.cpp */,
+				49EAA823290F730E0067637D /* TuringModel.hpp */,
+				49EAA825290F73B10067637D /* TuringView.cpp */,
+				49EAA826290F73B10067637D /* TuringView.hpp */,
+				49EAA828290F75FB0067637D /* Command.cpp */,
+				49EAA829290F75FB0067637D /* Command.hpp */,
 			);
 			path = TuringMachine;
 			sourceTree = "<group>";
@@ -121,7 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EAA827290F73B10067637D /* TuringView.cpp in Sources */,
+				49EAA82A290F75FB0067637D /* Command.cpp in Sources */,
+				4959AC22290ED525006E7E70 /* Turing.cpp in Sources */,
 				49C6DB26290E92DF0039D168 /* main.cpp in Sources */,
+				49EAA824290F730E0067637D /* TuringModel.cpp in Sources */,
+				4959AC1E290ECEBE006E7E70 /* Tape.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
