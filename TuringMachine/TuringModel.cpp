@@ -9,7 +9,11 @@
 
 using namespace::std;
 
-TuringModel::TuringModel() {}
+TuringModel::TuringModel() {
+    for (int i=0; i<TAPELENGTH; i++) {
+        tapeData[i] = '0';
+    }
+}
 
 TuringModel::~TuringModel() {}
 

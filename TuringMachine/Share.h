@@ -17,7 +17,7 @@
 #include <fstream>
 #include <vector>
 
-#define TAPELENGTH 4
+#define TAPELENGTH 8
 #define SLEEPTIME 2
 #define CODELINES 48
 #define RIGHT 'r'
