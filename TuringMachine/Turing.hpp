@@ -26,7 +26,7 @@ private:
     void handle(Command& command);
 
 public:
-    Turing();
+    Turing(const char* file);
     ~Turing();
     
     void run();

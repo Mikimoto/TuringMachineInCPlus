@@ -11,8 +11,8 @@
 //    command.print();
 //}
 
-Turing::Turing() {
-    readCode("/Users/mikimoto/Developer/DeepThought/TuringMachine/code.txt");
+Turing::Turing(const char* file) {
+    readCode(file);
     Command c("q0,0,0,h,q0");
     viewer.refresh(model, c);
 }

@@ -10,8 +10,10 @@
 using namespace::std;
 
 int main(int argc, const char * argv[]) {
-    cout << "圖靈機模擬器" << endl << endl;
-    Turing simulator;
-    simulator.run();
+    if (argc > 0) {
+        cout << "=== 圖靈機模擬器 ===" << endl << endl;
+        Turing simulator(argv[1]);
+        simulator.run();
+    }
     return 0;
 }
